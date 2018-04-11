@@ -4,7 +4,11 @@ class Pote:
     This class models a money reserve
     Um pote pode ficar negativo?
     """
-    def get_pote(self, nome, maximo, prioridade=1, saldo=0.0, moeda='R$'):
+
+    def __init__(self, nome = 'Sem Nome', maximo = 100.0, prioridade=1):
+        self.get_pote(nome = nome, maximo = maximo, prioridade = prioridade)
+
+    def get_pote(self, nome = 'Sem Nome', maximo = 100.0, prioridade=1, saldo=0.0, moeda='R$'):
         self.nome = nome
         self.saldo = saldo
         self.maximo = maximo
@@ -12,12 +16,15 @@ class Pote:
         self.prioridade = prioridade
         return self
 
+    def mostra(self):
+        print(self.get_heading())
+        print(str(self))
+
     def __str__(self):
-        # '{0} \n limite \n {moeda}{limite:0.2f} \n saldo \n {moeda}{saldo:0.2f} \n ({porc})'.format(self.nome, limite=self.maximo, moeda=self.moeda, saldo=self.get_saldo(), porc=self.get_porcentagem() )
-        return '{nome:<20} {moeda}{limite:8.2f}     {moeda}{saldo:8.2f}       {porc:6}'.format(nome=self.nome, limite=self.maximo, moeda=self.moeda, saldo=self.get_saldo(), porc=self.get_porcentagem() )
+        return '{0} {nome:20} {moeda}{limite:8.2f}     {moeda}{saldo:8.2f}       {porc:6}'.format(self.prioridade, nome=self.nome, limite=self.maximo, moeda=self.moeda, saldo=self.get_saldo(), porc=self.get_porcentagem() )
 
     def get_heading(self):
-        return '{nome:<20} {limite:<8}       {saldo:<8}       {porc:<6}'.format(nome='NOME', limite='LIMITE', saldo='SALDO', porc='PORCENTAGEM' )
+        return '  {nome:20} {limite:14} {saldo:16} {porc:6}'.format(nome='NOME', limite='LIMITE', saldo='SALDO', porc='PORCENTAGEM' )
 
     def get_porcentagem(self):
         return '{perc:0.1f}%'.format(perc = self.saldo / self.maximo * 100)

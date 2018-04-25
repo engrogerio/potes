@@ -14,8 +14,53 @@ class Pote:
         self._limite = limite
         self._moeda = moeda
         self._prioridade = prioridade
-        
         return self
+
+    def mostra(self): # Somente para console
+        print(self.cabecalho())
+        print(str(self))
+
+    def __str__(self):
+        return '{0} {nome:20} {moeda}{limite:8.2f}     {moeda}{saldo:8.2f}       {porc:6}'.format(self.prioridade(), nome=self.nome(), limite=self.limite(), moeda=self.moeda(), saldo=self.saldo(), porc=self.porcentagem() )
+
+    def status(self): # Somente para console
+        return '{nome} tem limite de {moeda}{limite:.2f} e saldo de {moeda}{saldo:.2f} ({porc:6})'.format(nome=self.nome(), limite=self.limite(), moeda=self.moeda(), saldo=self.saldo(), porc=self.porcentagem() )
+
+    def nome(self): # Somente para console
+        return self._nome
+
+    def prioridade(self): # Somente para console
+        return self._prioridade
+
+    def moeda(self): # Somente para console  
+        return self._moeda
+
+    def limite(self): # Somente para console
+        return self._limite
+
+    def saldo(self): # Somente para console
+        """
+        Mostra saldo da conta.
+
+        Cria pote
+        >>> p=Pote().cria_pote('conta de luz',200.5)
+
+        Enche o pote
+        >>> p.deposita(p.limite())
+        (0.0, 200.5)
+
+        Representação em string do pote
+	>>> print(p.status())
+	conta de luz tem limite de R$200.50 e saldo de R$200.50 (100.0%)
+
+        >>> p.saldo()
+        200.5
+        """
+        return self._saldo
+
+
+    def cabecalho(self): # Somente para console
+        return '  {nome:20} {limite:14} {saldo:16} {porc:6}'.format(nome='NOME', limite='LIMITE', saldo='SALDO', porc='PORCENTAGEM' )
 
     def porcentagem(self): 
         return '{perc:0.1f}%'.format(perc = self.saldo() / self.limite() * 100)

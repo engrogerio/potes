@@ -8,7 +8,8 @@ url;
 response;
   constructor(public http: HttpClient) {
     //console.log('Hello PotesProvider Provider');
-    this.url = 'http://localhost:5000/potes/api/v1.0/potes';
+    //this.url = 'http://localhost:5000/potes/api/v1.0/potes';
+    this.url = 'http://inventsis.pythonanywhere.com/potes/api/v1.0/potes';
   }
   //return an observable
   getPotes(){

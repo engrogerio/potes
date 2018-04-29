@@ -2,3 +2,66 @@ select * from pote where id='1'
 select * from pote where id='1'
 select * from pote where id='1'
 select * from pote where id='1'
+Exception on /potes/api/v1.0/total [GET]
+Traceback (most recent call last):
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask_restful/__init__.py", line 273, in error_router
+    return original_handler(e)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/rogerio/invent/potes/potes_server.py", line 111, in get_potes_total
+    total = sum(all_potes.valor)
+AttributeError: 'list' object has no attribute 'valor'
+Exception on /potes/api/v1.0/total [GET]
+Traceback (most recent call last):
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask_restful/__init__.py", line 273, in error_router
+    return original_handler(e)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/rogerio/invent/potes/potes_server.py", line 111, in get_potes_total
+    total = sum(all_potes.valor)
+AttributeError: 'list' object has no attribute 'valor'
+Exception on /potes/api/v1.0/total [GET]
+Traceback (most recent call last):
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask_restful/__init__.py", line 273, in error_router
+    return original_handler(e)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/rogerio/.virtualenv/potes/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/rogerio/invent/potes/potes_server.py", line 111, in get_potes_total
+    total = sum(all_potes.valor)
+AttributeError: 'list' object has no attribute 'valor'

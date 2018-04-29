@@ -14,13 +14,13 @@
     </p>
     
   <ion-list>
-    <div item-content *ngFor="let pote of potesList">
+    <div item-content *ngFor="let pote of potesList; let prioridade = index">
       <ion-item-sliding>
           <ion-item>
             <ion-avatar item-start>
                 <ion-icon name="logo-usd"></ion-icon>
             </ion-avatar>
-            <h1>{{pote.nome}} - R${{pote.saldo}} (45%) </h1>
+            <h1>{{ pote.prioridade }} {{pote.nome}} - R${{pote.saldo}} ({{ pote.porcento }}) </h1>
             <h6>limite = R${{ pote.limite }}</h6>
           </ion-item>
           <ion-item-options side="left">

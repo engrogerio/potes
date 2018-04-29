@@ -10,11 +10,13 @@ import logging
 from decimal import *
 import flask.json
 import datetime
+from flask_cors import CORS
 
 #Create a engine for connecting to SQLite3.
 #Assuming potes.db is in your app root folder
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

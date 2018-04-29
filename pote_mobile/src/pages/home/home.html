@@ -1,17 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>
+        Home
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
 
-<ion-content padding>
-  <h2>Veja seus Potes!</h2>
-  <p>
-    Selecione um pote para ver detalhes
-  </p>
+<ion-content class="home" >
+  <ion-grid width-50>
+    <h2>Veja seus Potes!</h2>
+    <p>
+      Selecione um pote para ver detalhes
+    </p>
+    
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-      {{ item }}
-    </button>  
+    <div item-content *ngFor="let pote of potesList">
+      <ion-item-sliding>
+          <ion-item>
+            <ion-avatar item-start>
+                <ion-icon name="logo-usd"></ion-icon>
+            </ion-avatar>
+            <h1>{{pote.nome}} - R${{pote.saldo}} (45%) </h1>
+            <h6>limite = R${{ pote.limite }}</h6>
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button color="primary">
+              <ion-icon name="md-add"></ion-icon>
+              Credito
+            </button>
+            <button ion-button color="secondary">
+              <ion-icon name="md-remove"></ion-icon>
+              Debito
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+              <button ion-button color="primary">
+                <ion-icon name="build"></ion-icon>
+                Altera Limite
+              </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </div>
   </ion-list>
+</ion-grid>
 </ion-content>
